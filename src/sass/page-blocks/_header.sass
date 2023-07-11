@@ -1,5 +1,9 @@
 .header
-
+  // position: absolute
+  // top: 0
+  // left: 0
+  // width: 100%
+  // z-index: 100
   &-top
     display: flex
     justify-content: space-between
@@ -25,50 +29,70 @@
   &-bottom
     padding-bottom: 10px
     border-bottom: 1px solid $ter-text-color
-@media screen and ( max-width: 1400px )
-  .header
-    &__info-item
-      font-size: 12px
-      svg
-        width: 18px
-        height: 18px
-    &__btn
-      margin-left: 20px
-
-      padding: 12px
-  .header__logo
-    img
-      max-width: 40px
-    span
-      font-size: 10px
-      max-width: 65px
-@media screen and  (max-width: 1200px)
-  .header
-    padding-top: 20px
-    &-wrapper
-      border: none
-    &__logo
-      margin-right: auto
-    &-nav
+  &-phone-mobile
+    display: none
+  .menu-close-btn
+    display: none
+  &-nav
+    .header-top-info,  .header-top-social, .header-top__btn
       display: none
-      position: fixed
-      top: 58px
-      background-color: $body-bg-color
-      width: 100%
-
+@media screen and ( max-width: 1200px )
+  .header
+    position: fixed
+    background-color: $body-bg-color
+    z-index: 199
+    width: 100%
+    &-top
+      padding: 24px 0
+    &-top-info
+      display: none
+    &-top-social
+      display: none
+    &-top__btn
+      display: none
+    &-bottom
+      border: none
+      padding: 0
+    &-phone-mobile
+      display: block
+      width: 48px
+      height: 48px
+      margin-left: auto
+    &-nav
+      position: absolute
+      top: 0
       left: 0
-      z-index: 99
+      width: 100%
+      height: 0
+      overflow: hidden
+      visibility: hidden
+      opacity: 0
+      padding: 75px 0 30px
+      background-color: $body-bg-color
+      transition: .5s
+      &.active
+        height: 100vh
+        visibility: visible
+        opacity: 1
+      .header-top-info
+        display: block
+        margin: 24px 0
+        &__item
+          justify-content: center
+      .header-top-social
+        display: flex
+      .header-top__btn
+        display: flex
+        margin: 0 auto 24px
+    .menu-close-btn
+      display: block
+      position: absolute
+      top: 24px
+      right: 24px
 @media screen and ( max-width: 768px )
   .header
-    &__btn
-      display: none
-    &__right
-      .phone
-        font-size: 0
-        margin: 0
-        svg
-          width: 34px
-          height: 34px
-          margin: 0
-      .email
+    &__logo
+      img
+        max-width: 150px
+      span
         display: none

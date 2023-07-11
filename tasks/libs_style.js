@@ -2,6 +2,7 @@ const plugins = [
 	'node_modules/@fancyapps/ui/dist/fancybox/fancybox.css',
 	'node_modules/swiper/swiper-bundle.min.css',
 	'node_modules/bootstrap/dist/css/bootstrap-grid.css',
+	'node_modules/aos/dist/aos.css',
 ];
 
 const {

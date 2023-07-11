@@ -4,7 +4,7 @@
   justify-content: center
   margin-right: auto
   &__item
-    margin: 0 16px
+    margin: 0 12px
     a
       padding: 10px 32px
       @include font(16px, 140%)
@@ -23,16 +23,15 @@
     path
       stroke: $main-color
 @media screen and ( max-width: 1600px )
-  .header-menu__item
-    margin: 0 12px
-    a
-      font-size: 14px
-
+  .header-menu__item a
+    padding: 10px 25px
+@media screen and ( max-width: 1400px )
+  .header-menu__item a
+    padding: 8px 16px
 @media screen and ( max-width: 1200px )
   .header-menu
-
     flex-direction: column
-    margin-top: 50px
-    margin-bottom: 128px
     &__item
-      margin: 0 0 32px
+      margin-bottom: 4px
+      a
+        padding: 10px 0

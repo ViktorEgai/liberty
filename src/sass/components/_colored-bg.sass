@@ -1,0 +1,48 @@
+.colored-bg
+  position: relative
+  z-index: 1
+  &::before
+    content: ''
+    position: absolute
+    filter: blur(1000px)
+    width: 687px
+    height: 719px
+    border-radius: 50%
+    background-color: $main-color
+    opacity: 0.15
+    z-index: -1
+    top: 0%
+    left: -20%
+  &::after
+    content: ''
+    position: absolute
+    filter: blur(1000px)
+    width: 738px
+    height: 770px
+    border-radius: 50%
+    background-color: $main-color
+    opacity: 0.15
+    z-index: -1
+    top: 2%
+    right: -22%
+@media screen and ( max-width: 1600px )
+  .colored-bg
+
+    &::before
+
+      width: 487px
+      height: 519px
+
+      top: 0%
+      left: -20%
+    &::after
+
+      width: 538px
+      height: 570px
+
+      top: 2%
+      right: -22%
+@media screen and ( max-width: 1200px )
+  .colored-bg
+    &::before, &::after
+      display: none

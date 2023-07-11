@@ -1,26 +1,88 @@
 .footer
-  padding: 75px 0 90px
+  background-color: $primary-text-color
+  color: #fff
+  &-top
+    padding: 64px 0 48px
+    border-bottom: 1px solid rgba(255, 255, 255, 0.20)
   &__logo
     margin-bottom: 16px
-  &-privacy
-    font-weight: 600
-    margin-bottom: 64px
-    display: block
-  &-copyrights
-    font-size: 14px
+    span
+      color: rgba(255, 255, 255, 0.50)
+      border-color: rgba(255, 255, 255, 0.20)
+  &-bottom
+    padding: 48px 0 64px
 
-    font-weight: 600
-    line-height: 180%
-    letter-spacing: 4px
-    text-transform: uppercase
-    color: $sec-text-color
-  &__image
+  &-buttons
+    margin-top: 32px
+    display: flex
+    align-items: center
+  &__btn
+    margin-right: 16px
+  &-busup
+    display: block
     margin-left: auto
     width: fit-content
-@media screen and ( max-width: 768px )
+  &-info
+    display: flex
+    align-items: center
+    height: 100%
+    &__item
+      display: block
+      color: rgba(255, 255, 255, 0.50)
+      font-size: 12px
+      &:not(:last-child)
+        margin-right: 48px
+  &-privacy
+    text-decoration: underline
+    transition: .3s
+
+  &-contacts
+    &__item
+      display: flex
+      align-items: center
+      font-size: 14px
+      line-height: 140%
+      a
+        transition: .3s
+      svg
+        margin-right: 4px
+      &:not(:last-child)
+        margin-bottom: 8px
+
+@media screen and ( min-width: 992px )
+  .footer-privacy:hover
+    color: $main-color
+
+  .footer-contacts__item a:hover
+    // text-decoration: underline
+    color: $main-color
+@media screen and ( max-width: 992px )
   .footer
-    padding: 32px 0 64px
+    &-top, &-bottom
+      padding: 48px 0
+    &-busup
+      margin: 0
+@media screen and ( max-width: 576px )
+  .footer
+    &__logo
+      img
+        margin-right: 15px
+        max-width: 45%
+      span
+        padding-left: 15px
+        font-size: 10px
+    &-info
+      flex-wrap: wrap
+
+      &__item
+        display: block
+        color: rgba(255, 255, 255, 0.50)
+        font-size: 12px
+        &:not(:last-child)
+          margin-right: 16px
+        &:last-child
+          padding-left: 16px
+          border-left: 1px solid rgba(255, 255, 255, 0.50)
     &-privacy
-      margin-bottom: 24px
-    &__image
-      margin: 32px 0 0
+      margin-bottom: 36px
+      width: 100%

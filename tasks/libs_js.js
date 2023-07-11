@@ -3,6 +3,7 @@ const plugins = [
 	'node_modules/swiper/swiper-bundle.min.js',
 	// 'node_modules/gsap/dist/gsap.min.js',
 	// 'node_modules/gsap/dist/ScrollTrigger.min.js',
+	'node_modules/aos/dist/aos.js',
 	'node_modules/inputmask/dist/inputmask.min.js',
 ];
 const {
