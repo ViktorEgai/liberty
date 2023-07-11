@@ -1,0 +1,38 @@
+.header-menu
+  display: flex
+  align-items: center
+  justify-content: center
+  margin-right: auto
+  &__item
+    margin: 0 16px
+    a
+      padding: 10px 32px
+      @include font(16px, 140%)
+      display: inline-flex
+      align-items: center
+      transition: .3s
+      .arrow
+        margin-left: 8px
+        display: inline-block
+        margin-top: -2px
+    path
+      transition: .3s
+@media screen and ( min-width: 992px )
+  .header-menu__item a:hover
+    color: $main-color
+    path
+      stroke: $main-color
+@media screen and ( max-width: 1600px )
+  .header-menu__item
+    margin: 0 12px
+    a
+      font-size: 14px
+
+@media screen and ( max-width: 1200px )
+  .header-menu
+
+    flex-direction: column
+    margin-top: 50px
+    margin-bottom: 128px
+    &__item
+      margin: 0 0 32px

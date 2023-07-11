@@ -1,0 +1,5 @@
+@font-face {
+  font-family: 'Manrope-Bold';
+  src: url(./Manrope-Bold.woff) format('woff'),
+       url(./Manrope-Bold.woff2) format('woff2');
+}

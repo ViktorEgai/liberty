@@ -1,0 +1,39 @@
+
+<div class="popup" id="popup">
+	<div class="popup-title">Связаться с нами</div>
+
+	<form class="form popup__form">
+		<div class="form-notice">Заполните данные и мы свяжемся с вами и проконсультируем по интересующему продукту</div>
+
+		<div class="row">
+			<div class="col-md-3">
+				<label for="popup_username" class="form-label"> Ваше имя* </label>
+				<input type="text" class="form-input" required placeholder="Ваше имя" id="popup_username" name="username" />
+			</div>
+			<div class="col-md-3">
+				<label for="popup_usercompany" class="form-label"> Название компании </label>
+				<input type="text" class="form-input" placeholder="Название компании" id="popup_usercompany" name="usercompany" />
+			</div>
+			<div class="col-md-3">
+				<label for="popup_userphone" class="form-label"> Ваш телефон* </label>
+				<input type="tel" class="form-input" required placeholder="Ваш телефон*" id="popup_userphone" name="userphone" />
+			</div>
+			<div class="col-md-3">
+				<label for="popup_useremail" class="form-label">Ваш Email </label>
+				<input type="email" class="form-input" placeholder="Ваш Email" id="popup_useremail" name="useremail" />
+			</div>
+			<div class="col mt-4">
+				<label for="popup_usercomment" class="form-label">Комментарий </label>
+				<textarea name="usercomment" id="popup_usercomment" class="form-textarea form-input" placeholder="Ваша задача или комментарий*"></textarea>
+			</div>
+		</div>
+		<div class="d-flex mt-4 flex-column flex-lg-row">
+			<button class="btn form-btn" type="submit">Отправить заявку</button>
+
+			<label class="form-acceptance">
+				<input type="checkbox" name="acceptance" checked />
+				<span>Даю свое согласие на обработку персональных данных</span></label
+			>
+		</div>
+	</form>
+</div>
