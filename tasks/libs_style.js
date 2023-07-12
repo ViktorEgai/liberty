@@ -3,6 +3,8 @@ const plugins = [
 	'node_modules/swiper/swiper-bundle.min.css',
 	'node_modules/bootstrap/dist/css/bootstrap-grid.css',
 	'node_modules/aos/dist/aos.css',
+	'node_modules/intl-tel-input/build/css/intlTelInput.min.css',
+
 ];
 
 const {
