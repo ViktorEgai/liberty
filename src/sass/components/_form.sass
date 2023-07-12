@@ -1,47 +1,55 @@
 .form
-  border-radius: 20px
-  background: $grey
-  padding: 32px
+
   &__title
-    @include font (48px, 120%, 600)
+    margin-bottom: 16px
+  &__text
+    margin-bottom: 32px
+    span
+      color: $main-color
+  &__label
+    font-size: 12px
+    display: flex
+    flex-direction: column
+    gap: 8px
     margin-bottom: 8px
-  &-notice
-    color: $sec-text-color
-    @include font (18px, 140%)
-    margin-bottom: 24px
-  &-label
-    @include font (18px, 140%,600)
-    margin-bottom: 8px
-    display: block
-  &-input
-    padding: 10px 15px
+    .required
+      color: #d24e4e
+  &__input
+    padding: 13px 12px
     width: 100%
-    border-radius: 8px
-    border: 1px solid $ter-text-color
+    border-radius: 5px
+    border: 1px solid rgba(0,0,0,.1)
     background-color: transparent
+    font-size: 16px
     &::placeholder
-      color: $ter-text-color
-  &-textarea
+      color: $sec-text-color
+    &[type="tel"]
+      padding-left: 110px !important
+  &__textarea
     resize: none
-  &__select
-    background-color: #fff
-    appearance: none
-    background-image: url(../img/arrow.svg)
-    background-repeat: no-repeat
-    background-position: 98% 50%
+    height: 102px
+  &__file
     cursor: pointer
-  &-btn
-  &-acceptance
+    color: $main-color
+    input
+      opacity: 0
+      position: absolute
+      visibility: hidden
+  &-bottom
+    margin-top: 32px
+    display: flex
+  &__acceptance
     display: flex
     align-items: center
-    margin-left: 20px
+    margin-left: 16px
     cursor: pointer
-    max-width: 285px
+    cursor: pointer
+    // max-width: 285px
     input
-      flex: 1 1 auto
+      // flex: 1 1 auto
       width: 16px
       height: 16px
-      border: 1px solid $sec-text-color
+      border: 1px solid rgba(0,0,0,.5)
       border-radius: 5px
       margin-right: 10px
       position: relative
@@ -49,12 +57,63 @@
       align-items: center
       justify-content: center
       appearance: auto
-
+      position: relative
+      appearance: none
+      transition: .3s
+      &::before
+        content: ''
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        background-image: url(../img/checkbox.svg)
+        background-size: contain
+        background-position: center center
+        background-repeat: no-repeat
+        width: 8px
+        height: 8px
+        opacity: 0
+        transition: .3s
+      &:checked
+        border-color: $main-color
+        &::before
+          opacity: 1
     span
       display: block
       max-width: 265px
-@media screen and ( max-width: 992px )
-  .form-acceptance
-    margin: 20px 0 0
-  .form__title
-    font-size: 24px
+  .iti__flag
+    box-shadow: none
+    border-radius: 2px
+  .iti__selected-dial-code
+    font-size: 16px
+    margin-left: 8px !important
+  .iti__arrow
+    border: none
+    background-image: url(../img/arrow-down.svg)
+    background-size: contain
+    background-repeat: no-repeat
+    width: 16px
+    height: 16px
+    margin-left: 8px
+  .iti--separate-dial-code .iti__selected-flag
+    background-color: transparent
+  .iti__selected-flag
+    padding-right: 16px
+    border-right: 1px solid rgba(0,0,0,.1)
+    opacity: 0.5
+    transition: .3s
+    box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.10)
+  .iti__flag-container
+    display: flex
+    align-items: center
+@media screen and ( min-width: 992px )
+  .iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag
+    opacity: 1
+    background-color: transparent
+
+@media screen and ( max-width: 576px )
+  .form-bottom
+    flex-direction: column
+  .form__acceptance
+    margin-left: 0
+    margin-top: 16px

@@ -1,0 +1,47 @@
+.objects
+
+  &-wrapper
+
+  &__title
+    margin-bottom: 64px
+  &-item
+  &-item__image
+    margin-bottom: 24px
+    filter: grayscale(1)
+    transition: .3s
+    border-radius: 8px
+    overflow: hidden
+    picture,img
+      width: 100%
+      object-fit: cover
+  &-item__title
+    font-size: 15px
+    line-height: 140%
+    font-weight: 600
+    margin-bottom: 16px
+  &-item__exceprt
+    font-size: 14px
+    margin-bottom: 24px
+  &-item-attr
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+  &-item-attr__item
+    border-radius: 4px
+    background: rgba(34, 142, 253, 0.08)
+    padding: 10px
+    margin-right: 8px
+    color: $main-color
+@media screen and ( min-width: 992px )
+  .objects-item:hover .objects-item__image
+    filter: grayscale(0)
+@media screen and ( max-width: 576px )
+  .objects-item
+    &__title
+      margin-bottom: 8px
+    &__excerpt
+      margin-bottom: 16px
+    &__image
+      margin-bottom: 12px
+      picture,img
+        height: 220px
