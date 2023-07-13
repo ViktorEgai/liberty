@@ -45,11 +45,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	};
 	// togglePopup();
 
-  // systems slider
+	// systems slider
 	let systemSwiper = undefined;
 	const initSystemSwiper = () => {
 		const screenWidth = window.innerWidth;
-		const sliderWrapper = document.querySelector('.systems-swiper .swiper-wrapper');
+		const sliderWrapper = document.querySelector(".systems-swiper .swiper-wrapper");
 		if (screenWidth < 768 && systemSwiper == undefined) {
 			systemSwiper = new Swiper(".systems-swiper", {
 				// Optional parameters
@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				// If we need pagination
 				pagination: {
 					el: ".systems-pagination",
+          clickable: true
 				},
 
 				// Navigation arrows
@@ -73,8 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				},
 			});
 
-       sliderWrapper.classList.remove('row');
-
+			sliderWrapper.classList.remove("row");
 		} else if (screenWidth > 768 && systemSwiper != undefined) {
 			systemSwiper.destroy();
 			systemSwiper = undefined;
@@ -83,28 +83,29 @@ document.addEventListener("DOMContentLoaded", () => {
 			systemSwiperWrapper.removeAttribute("style");
 			systemSwiperSlide.forEach((slide) => slide.removeAttribute("style"));
 
-       sliderWrapper.classList.add('row');
+			sliderWrapper.classList.add("row");
 		}
 	};
 	initSystemSwiper();
 	window.addEventListener("resize", initSystemSwiper);
 
-  // objects slider
+	// objects slider
 	let objectsSwiper = undefined;
 	const initObjectsSwiper = () => {
 		const screenWidth = window.innerWidth;
-		const sliderWrapper = document.querySelector('.objects-swiper .swiper-wrapper');
+		const sliderWrapper = document.querySelector(".objects-swiper .swiper-wrapper");
 
 		if (screenWidth < 576 && objectsSwiper == undefined) {
-			objectsSwiper = new Swiper('.objects-swiper', {
+			objectsSwiper = new Swiper(".objects-swiper", {
 				// Optional parameters
 				slidesPerView: 1,
 				slidesPerGroup: 1,
 				spaceBetween: "20px",
-				
+
 				// If we need pagination
 				pagination: {
 					el: ".systems-pagination",
+          clickable: true
 				},
 
 				// Navigation arrows
@@ -113,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					prevEl: ".systems-arrow--prev",
 				},
 			});
-      sliderWrapper.classList.remove('row');
+			sliderWrapper.classList.remove("row");
 		} else if (screenWidth > 768 && objectsSwiper != undefined) {
 			objectsSwiper.destroy();
 			objectsSwiper = undefined;
@@ -122,49 +123,136 @@ document.addEventListener("DOMContentLoaded", () => {
 			systemSwiperWrapper.removeAttribute("style");
 			systemSwiperSlide.forEach((slide) => slide.removeAttribute("style"));
 
-      sliderWrapper.classList.add('row');
-
+			sliderWrapper.classList.add("row");
 		}
 	};
 	initObjectsSwiper();
 	window.addEventListener("resize", initObjectsSwiper);
 
+	// counter animation
+	const counterAnimation = () => {
+		let offsetTop = false;
+		const aboutSection = document.querySelector(".about");
+		window.addEventListener("scroll", () => {
+			if (aboutSection.getBoundingClientRect().top < 250) {
+				offsetTop = true;
+			}
+			if (offsetTop == true) {
+				const counters = document.querySelectorAll(".num");
+				const speed = 3000;
 
-  // counter animation
-  const counterAnimation = () => {
-    let offsetTop = false;
-    const aboutSection = document.querySelector('.about');
-    window.addEventListener('scroll', ()=> {
-    if (aboutSection.getBoundingClientRect().top < 250) {
-      offsetTop = true;
+				counters.forEach((counter) => {
+					const animate = () => {
+						const value = +counter.dataset.num;
+						const data = +counter.innerText;
 
-      
-    }
-    if (offsetTop == true) {
-      const counters = document.querySelectorAll('.num');
-      const speed = 3000;
+						const time = value / speed;
+						if (data < value) {
+							counter.innerText = Math.ceil(data + time);
+							setTimeout(animate, 1);
+						} else {
+							counter.innerText = value;
+						}
+					};
 
-      counters.forEach( counter => {
-        const animate = () => {
-            const value = +counter.dataset.num;
-            const data = +counter.innerText;
-          
-            const time = value / speed;
-          if(data < value) {
-                counter.innerText = Math.ceil(data + time);
-                setTimeout(animate, 1);
-              }else{
-                counter.innerText = value;
-              }          
-        }
-        
-        animate();
-      });
-    }
-    })
-    
-  };
-  counterAnimation();
+					animate();
+				});
+			}
+		});
+	};
+	counterAnimation();
+
+	// partners swiper
+	const partnersSlider = () => {
+		const slider = document.querySelector(".partners-swiper");
+		if (slider !== null) {
+			const swiper = new Swiper(slider, {
+				// Optional parameters
+				slidesPerView: 6,
+				spaceBetween: 32,
+				loop: true,
+
+				// If we need pagination
+				pagination: {
+					el: ".partners-pagination",
+          clickable: true
+				},
+
+				// Navigation arrows
+				navigation: {
+					nextEl: ".partners-arrow--next",
+					prevEl: ".partners-arrow--prev",
+				},
+				breakpoints: {
+					// when window width is >= 320px
+					320: {
+						slidesPerView: 'auto',
+						spaceBetween: 20,
+					},
+					
+					
+					// when window width is >= 640px
+					992: {
+						slidesPerView: 4,
+						
+					},
+          1200: {
+            slidesPerView: 5
+          },
+          1600: {
+            slidesPerView: 6
+          }
+				},
+			});
+		}
+	};
+
+	partnersSlider();
+
+	// news swiper
+	const newsSlider = () => {
+		const slider = document.querySelector(".news-swiper");
+		if (slider !== null) {
+			const swiper = new Swiper(slider, {
+				// Optional parameters
+				slidesPerView: 3,
+				spaceBetween: 32,
+				loop: true,
+
+				// If we need pagination
+				pagination: {
+					el: ".partners-pagination",
+          clickable: true
+				},
+
+				// Navigation arrows
+				navigation: {
+					nextEl: ".partners-arrow--next",
+					prevEl: ".partners-arrow--prev",
+				},
+				breakpoints: {
+					// when window width is >= 320px
+					320: {
+						slidesPerView: 'auto',
+						spaceBetween: 20,
+					},
+					
+					
+					// when window width is >= 640px
+					992: {
+						slidesPerView: 3,
+						
+					},
+          1200: {
+            slidesPerView: 3
+          },
+         
+				},
+			});
+		}
+	};
+
+	newsSlider();
 
 	// маска телефона
 	const telInput = document.querySelectorAll('input[type="tel"]');
