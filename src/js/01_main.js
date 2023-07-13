@@ -129,6 +129,43 @@ document.addEventListener("DOMContentLoaded", () => {
 	initObjectsSwiper();
 	window.addEventListener("resize", initObjectsSwiper);
 
+
+  // counter animation
+  const counterAnimation = () => {
+    let offsetTop = false;
+    const aboutSection = document.querySelector('.about');
+    window.addEventListener('scroll', ()=> {
+    if (aboutSection.getBoundingClientRect().top < 250) {
+      offsetTop = true;
+
+      
+    }
+    if (offsetTop == true) {
+      const counters = document.querySelectorAll('.num');
+      const speed = 3000;
+
+      counters.forEach( counter => {
+        const animate = () => {
+            const value = +counter.dataset.num;
+            const data = +counter.innerText;
+          
+            const time = value / speed;
+          if(data < value) {
+                counter.innerText = Math.ceil(data + time);
+                setTimeout(animate, 1);
+              }else{
+                counter.innerText = value;
+              }          
+        }
+        
+        animate();
+      });
+    }
+    })
+    
+  };
+  counterAnimation();
+
 	// маска телефона
 	const telInput = document.querySelectorAll('input[type="tel"]');
 

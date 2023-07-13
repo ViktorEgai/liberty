@@ -32,9 +32,17 @@
     padding: 10px
     margin-right: 8px
     color: $main-color
+  &__btn
+    width: fit-content
+    margin: 64px auto 0
+
 @media screen and ( min-width: 992px )
   .objects-item:hover .objects-item__image
     filter: grayscale(0)
+@media screen and ( max-width: 768px )
+  .objects__title
+    margin-bottom: 32px
+
 @media screen and ( max-width: 576px )
   .objects-item
     &__title
@@ -45,3 +53,6 @@
       margin-bottom: 12px
       picture,img
         height: 220px
+  .objects__btn
+    margin-top: 32px
+    width: 100%
