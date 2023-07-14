@@ -1,12 +1,22 @@
 .hero
-  padding-bottom: 70px
+  padding-top: 0
+  // position: static
+  // &::before
+  //   content: ""
+  //   position: absolute
+  //   top: 0
+  //   left: 0
+  //   width: 100%
+  //   min-height: 100%
+  //   background-image: url(../img/hero-bg.svg)
+    // background-size: cover
   &::after
     top: -40%
   &-wrapper
 
   &__title
     margin-bottom: 24px
-    margin-right: -50px
+    // margin-right: -50px
   &__subtitle
     @include font (14px, 180%,600)
     letter-spacing: 3px
@@ -30,7 +40,7 @@
       transition: .3s
       height: 100%
       transition: all .3s
-
+      background-color: $body-bg-color
     &__icon
       margin-bottom: 8px
     &__text
@@ -51,6 +61,14 @@
 
 @media screen and ( max-width: 992px )
   .hero
+
+    &::after
+      display: block
+      width: 385px
+      height: 450px
+      top: auto
+      bottom: 10%
+
     &__image
       display: none
     &__title
@@ -59,6 +77,7 @@
       font-size: 12px
     &-cards
       margin-top: 64px
+
 @media screen and ( max-width: 440px )
   .hero__btn
     width: 100%

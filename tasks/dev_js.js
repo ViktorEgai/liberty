@@ -7,6 +7,8 @@ const concat = require('gulp-concat');
 const map = require('gulp-sourcemaps');
 const bs = require('browser-sync');
 const babel = require('gulp-babel');
+const gulpRevAll = require("gulp-rev-all");
+
 
 module.exports = function dev_js() {
 	return src(['src/components/**/*.js', 'src/js/**/*.js'])

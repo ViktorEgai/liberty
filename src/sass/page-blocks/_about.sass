@@ -70,6 +70,21 @@
         font-size: 48px
 @media screen and ( max-width: 992px )
   .about
+    position: relative
+    z-index: 1
+
+    &::before
+      content: ''
+      position: absolute
+      width: 565px
+      height: 565px
+      background-color: $blur-color
+      border-radius: 50%
+      left: -70%
+      filter: blur(150px)
+
+      bottom: -10%
+      z-index: -1
     &__image
       margin: 0
     &__title
@@ -78,7 +93,7 @@
       grid-template-columns: repeat(2,1fr)
       row-gap: 0
       &__item
-        padding: 24px
+        padding: 24px 0
         &:not(:last-child)
           border-right: none
         &:nth-child(1),  &:nth-child(2)

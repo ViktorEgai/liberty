@@ -16,7 +16,7 @@
     box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.06)
     transition: .3s
   &-item__thumb
-    max-height: 132px
+    height: 132px
     margin-bottom: 24px
     filter: grayscale(1)
     transition: .3s
@@ -40,6 +40,9 @@
     transition: .3s
     path
       transition: .3s
+  .partners-arrows
+    top: 10px
+    right: 10px
 @media screen and ( min-width: 992px )
   .news-item:hover
 
@@ -51,3 +54,10 @@
       color: $main-color
       path
         stroke: $main-color
+@media screen and ( max-width: 992px )
+  .news-swiper
+    padding: 10px
+    margin: -10px
+@media screen and ( max-width: 768px )
+  .news-slide
+    max-width: 285px
