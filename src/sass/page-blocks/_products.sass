@@ -1,0 +1,53 @@
+.products
+
+  &-wrapper
+    display: grid
+    grid-template-columns: repeat(5,1fr)
+    gap: 32px
+
+  &-item
+    border-radius: 8px
+    background: #fff
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.06)
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    padding: 24px 12px
+    gap: 16px
+    height: auto
+  &-item__thumb
+    margin: auto
+    picture, img
+      max-height: 138px
+      width: 100%
+  &-item__name
+    @include font( 16px, 140%,600)
+  &-item__price
+    color: $main-color
+    font-size: 18px
+    transition: .3s
+    margin-top: auto
+    padding: 2px 0
+
+@media screen and ( min-width: 992px )
+  .products-item:hover .products-item__price
+    border-radius: 4px
+    background: rgba(34, 142, 253, 0.08)
+    padding: 2px 8px
+@media screen and ( max-width: 1400px )
+  .products
+    &-wrapper
+      grid-template-columns: repeat( 4,1fr )
+@media screen and ( max-width: 992px )
+  .products
+    &-swiper
+      padding: 10px
+      margin: -10px
+    &-wrapper
+      display: flex
+      gap: 0
+
+    .partners-bottom
+      display: flex
+    .partners-arrows
+      position: static

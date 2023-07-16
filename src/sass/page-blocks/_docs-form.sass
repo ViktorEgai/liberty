@@ -1,0 +1,29 @@
+
+.docs-form
+
+  &-wrapper
+  &__title
+    max-width: 810px
+    margin-bottom: 64px
+  &__image
+    display: flex
+    padding-top: 64px
+    // padding: 64px 109px 0px 109px
+    flex-direction: column
+    justify-content: flex-end
+    align-items: center
+    border-radius: 8px
+    background: rgba(34, 142, 253, 0.08)
+    height: 100%
+    picture,img
+      max-width: 440px
+      width: 100%
+      margin: auto
+  &-block
+    background-color: $sec-text-color
+    height: 100%
+    min-height: 300px
+@media screen and ( max-width: 992px )
+  .docs-form
+    &__title
+      margin-bottom: 32px

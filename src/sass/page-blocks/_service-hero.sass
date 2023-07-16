@@ -1,0 +1,75 @@
+.service-hero
+  padding-top: 0
+  &::after
+
+    top: -20%
+  &-wrapper
+
+  &__title
+    margin-top: 96px
+    margin-bottom: 32px
+  &__text
+    p,ul,ol
+      margin: 1.2em 0
+  &__bottom
+    margin-top: 48px
+    display: flex
+    align-items: flex-start
+    flex-wrap: wrap
+
+  &__btn
+    margin-right: 16px
+    margin-bottom: 16px
+  &__social-text
+    max-width: 125px
+  &__image
+
+    max-width: 450px
+    margin: auto
+    position: relative
+    &::before
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-45%,-40%) scale(1.1)
+      background-image: url(../img/image-bg.svg)
+      background-repeat: no-repeat
+      background-size: 100%
+      background-position: center
+      width: 110%
+      height: 110%
+  &__notice
+    display: flex
+    border-radius: 8px
+    background-color: #fff
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.06)
+    padding: 16px
+    font-size: 15px
+    color: $sec-text-color
+    margin-top: 64px
+    svg
+      margin-right: 8px
+
+@media screen and ( max-width: 1200px )
+  .service-hero
+    &__title
+      margin-top: 16px
+    &__image
+      max-width: 300px
+@media screen and ( max-width: 992px )
+  .service-hero
+    &::before
+      display: block
+      width: 385px
+      height: 450px
+      left: auto
+      top: auto
+      bottom: -30%
+      right: 0
+    &__title
+      margin-bottom: 24px
+
+@media screen and ( max-width: 440px )
+  .service-hero__btn
+    width: 100%

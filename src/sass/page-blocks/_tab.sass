@@ -1,0 +1,79 @@
+
+.tab
+
+  &__title
+    margin-bottom: 64px
+  &-wrapper
+    padding: 48px 32px
+    border-radius: 8px
+    background: #fff
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.06)
+  &-nav
+    &-arrows
+      display: none
+  &-nav__item
+    text-align: left
+    padding: 24px 10px 24px 32px
+    font-size: 18px
+    font-weight: 600
+    line-height: 140%
+    max-width: 225px
+    color: $sec-text-color
+    border-bottom: 1px solid rgba(182, 182, 182, 0.08)
+    transition: .3s
+    width: 100%
+    background: rgba(182, 182, 182, 0.08)
+    position: relative
+    &::before
+      content: ''
+      position: absolute
+      width: 100%
+      height: 3px
+      bottom: 0
+      left: 0
+      transition: .3s
+
+    &:not(:last-child)
+      border-right: 1px solid rgba(0, 0, 0, 0.10)
+
+    &.active
+      color: $main-color
+      border-bottom-color: $main-color
+      &::before
+        background-color: $main-color
+  &-content
+    margin-top: 48px
+  &-content__item
+    display: none
+    &.active
+      display: block
+  &-content__image
+    img
+      border-radius: 8px
+      width: 100%
+  &-content__text
+    margin-bottom: -1.2em
+    h3
+      @include font (24px, 140%,600)
+      margin-bottom: 1.5em
+    p,ol,ul
+      margin: 1.2em 0
+    ul
+      list-style-type: '- '
+      padding-left: .5em
+      li
+        margin: 4px 0
+@media screen and ( max-width: 1600px )
+  .tab
+    &-nav-arrows
+      display: flex
+      align-items: center
+      justify-content: flex-end
+      margin-top: 20px
+@media screen and ( max-width: 768px )
+  .tab
+    &-content__text
+      h3
+        font-size: 18px
+      p,ol,ul
+        font-size: 14px
