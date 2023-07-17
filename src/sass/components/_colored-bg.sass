@@ -4,36 +4,41 @@
   &::before
     content: ''
     position: absolute
-    -webkit-filter: blur(1000px)
-    -moz-filter: blur(1000px)
-    -ms-filter: blur(1000px)
-    filter: blur(1000px)
-    width: 687px
-    height: 719px
+    -webkit-filter: blur(500px)
+    -moz-filter: blur(500px)
+    -ms-filter: blur(500px)
+    filter: blur(500px)
+    width: 487px
+    height: 519px
     border-radius: 50%
     background-color: #DCEDFE
+    background-color: $main-color
+    // background: radial-gradient(circle, rgba(220,237,254,1) 0%, rgba(255,255,255,1) 70%)
+    // transform: scale(2.5)
     // opacity: 0.4
     z-index: -1
     top: 0%
-    left: -20%
+    left: -22%
 
   &::after
     content: ''
     position: absolute
 
-    -webkit-filter: blur(1000px)
-    -moz-filter: blur(1000px)
-    -ms-filter: blur(1000px)
-    filter: blur(1000px)
+    -webkit-filter: blur(500px)
+    -moz-filter: blur(500px)
+    -ms-filter: blur(500px)
+    filter: blur(500px)
 
-    width: 738px
-    height: 770px
+    width: 538px
+    height: 570px
     border-radius: 50%
     background-color: #DCEDFE
+    background-color: $main-color
+    // background: radial-gradient(circle, rgba(220,237,254,1) 20%, rgba(255,255,255,1) 50%)
     // opacity: 1
     z-index: -1
     top: 2%
-    right: -22%
+    right: -25%
 @media screen and ( max-width: 1600px )
   .colored-bg
 

@@ -5,3 +5,28 @@
     background: linear-gradient(0deg, rgba(34, 142, 253, 0.08) 0%, rgba(34, 142, 253, 0.08) 100%), #fff
     padding: 64px 106px
     margin: -64px -106px
+@media screen and ( max-width: 768px )
+  .service-form
+    position: relative
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+
+      -webkit-filter: blur(1000px)
+      -moz-filter: blur(1000px)
+      -ms-filter: blur(1000px)
+      filter: blur(1000px)
+
+      width: 365px
+      height: 365px
+      border-radius: 50%
+      background-color: #DCEDFE
+
+      z-index: -1
+      top: 50%
+      left: -30%
+    &-wrapper
+      padding: 0
+      margin: 0
+      background: none
