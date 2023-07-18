@@ -509,14 +509,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		const dropdownSection = document.querySelector(".dropdown");
 
-		const body = dropdownSection.querySelectorAll(".dropdown-body");
+		
+		if (dropdownSection !== null) {
+
+			const body = dropdownSection.querySelectorAll(".dropdown-body");
 		const title = dropdownSection.querySelectorAll(".dropdown-item-title");
 		const collapse = new ItcCollapse(body[0]);
 		title[0].classList.add('active');
 
 		collapse.show();
 
-		if (dropdownSection !== null) {
+
 			dropdownSection.addEventListener("click", (e) => {
 				let t = e.target;
 				if (t.closest(".dropdown-item-title")) {
