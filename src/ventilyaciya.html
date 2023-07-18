@@ -396,36 +396,14 @@
 					<!-- /.container -->
 				</div>
 				<!-- /.service-columns -->
-				@@include('components/page-blocks/_systems.html')
+				@@include('components/page-blocks/_systems.html') @@include('components/page-blocks/_doc-form.html')
 
-				<section class="section docs-form">
-					<div class="container">
-						<div class="docs-form-wrapper">
-							<h2 class="docs-form__title section-title">У вас нестандартный проект или вы <span>не знаете</span> как правильно все рассчитать?</h2>
-							<div class="row">
-								<div class="col-lg-6 d-none d-lg-block" data-aos="fade-right">
-									<div class="docs-form__image">
-										<picture
-											><source type="image/webp" srcset="img/phone.webp" />
-											<source type="image/png" srcset="img/phone.png" />
-											<img src="img/phone.png" alt=""
-										/></picture>
-									</div>
-								</div>
-								<div class="col-lg-6">
-									<div class="docs-form-block"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /.container -->
-				</section>
-				<!-- /.section docs-form -->
-				<section class="products section" data-aos="fade-up">
+				<section class="products section colored-bg" data-aos="fade-up">
 					<div class="container">
 						<div class="swiper products-swiper">
+							<h2 class="products__title section-title">Оборудование для вентиляции и кондиционирования</h2>
 							<div class="products-wrapper swiper-wrapper">
-								<a href="#" class="products-item swiper-slide">
+								<div class="products-item swiper-slide">
 									<div class="products-item__thumb">
 										<picture
 											><source type="image/webp" srcset="img/vent/1.webp" />
@@ -433,10 +411,10 @@
 											<img src="img/vent/1.png" alt=""
 										/></picture>
 									</div>
-									<p class="products-item__name">Сплит-системы</p>
-									<span class="products-item__price">От 18 600 ₽ за шт. </span>
-								</a>
-								<a href="#" class="products-item swiper-slide">
+									<p class="products-item__name">Сплит- <br />системы</p>
+									<!-- <span class="products-item__price">От 18 600 ₽ за шт. </span> -->
+								</div>
+								<div class="products-item swiper-slide">
 									<div class="products-item__thumb">
 										<picture
 											><source type="image/webp" srcset="img/vent/2.webp" />
@@ -444,10 +422,10 @@
 											<img src="img/vent/2.png" alt=""
 										/></picture>
 									</div>
-									<p class="products-item__name">VRF-системы</p>
-									<span class="products-item__price">От 18 600 ₽ за шт. </span>
-								</a>
-								<a href="#" class="products-item swiper-slide">
+									<p class="products-item__name">VRF-<br />системы</p>
+									<!-- <span class="products-item__price">От 18 600 ₽ за шт. </span> -->
+								</div>
+								<div class="products-item swiper-slide">
 									<div class="products-item__thumb">
 										<picture
 											><source type="image/webp" srcset="img/vent/3.webp" />
@@ -456,9 +434,9 @@
 										/></picture>
 									</div>
 									<p class="products-item__name">Чиллеры и компрессорно-конденсаторные блоки</p>
-									<span class="products-item__price">От 18 600 ₽ за шт. </span>
-								</a>
-								<a href="#" class="products-item swiper-slide">
+									<!-- <span class="products-item__price">От 18 600 ₽ за шт. </span> -->
+								</div>
+								<div class="products-item swiper-slide">
 									<div class="products-item__thumb">
 										<picture
 											><source type="image/webp" srcset="img/vent/4.webp" />
@@ -467,9 +445,9 @@
 										/></picture>
 									</div>
 									<p class="products-item__name">Фанкойлы</p>
-									<span class="products-item__price">От 18 600 ₽ за шт. </span>
-								</a>
-								<a href="#" class="products-item swiper-slide">
+									<!-- <span class="products-item__price">От 18 600 ₽ за шт. </span> -->
+								</div>
+								<div class="products-item swiper-slide">
 									<div class="products-item__thumb">
 										<picture
 											><source type="image/webp" srcset="img/vent/5.webp" />
@@ -478,9 +456,9 @@
 										/></picture>
 									</div>
 									<p class="products-item__name">Прецизионные кондиционеры</p>
-									<span class="products-item__price">От 18 600 ₽ за шт. </span>
-								</a>
-								<a href="#" class="products-item swiper-slide">
+									<!-- <span class="products-item__price">От 18 600 ₽ за шт. </span> -->
+								</div>
+								<div class="products-item swiper-slide">
 									<div class="products-item__thumb">
 										<picture
 											><source type="image/webp" srcset="img/vent/6.webp" />
@@ -489,9 +467,9 @@
 										/></picture>
 									</div>
 									<p class="products-item__name">Вентиляторы</p>
-									<span class="products-item__price">От 18 600 ₽ за шт. </span>
-								</a>
-								<a href="#" class="products-item swiper-slide">
+									<!-- <span class="products-item__price">От 18 600 ₽ за шт. </span> -->
+								</div>
+								<div class="products-item swiper-slide">
 									<div class="products-item__thumb">
 										<picture
 											><source type="image/webp" srcset="img/vent/7.webp" />
@@ -499,10 +477,10 @@
 											<img src="img/vent/7.png" alt=""
 										/></picture>
 									</div>
-									<p class="products-item__name">Вентиляционные установки</p>
-									<span class="products-item__price">От 18 600 ₽ за шт. </span>
-								</a>
-								<a href="#" class="products-item swiper-slide">
+									<p class="products-item__name">Вентиляционные <br />установки</p>
+									<!-- <span class="products-item__price">От 18 600 ₽ за шт. </span> -->
+								</div>
+								<div class="products-item swiper-slide">
 									<div class="products-item__thumb">
 										<picture
 											><source type="image/webp" srcset="img/vent/8.webp" />
@@ -511,9 +489,9 @@
 										/></picture>
 									</div>
 									<p class="products-item__name">Увлажнители и осушители воздуха</p>
-									<span class="products-item__price">От 18 600 ₽ за шт. </span>
-								</a>
-								<a href="#" class="products-item swiper-slide">
+									<!-- <span class="products-item__price">От 18 600 ₽ за шт. </span> -->
+								</div>
+								<div class="products-item swiper-slide">
 									<div class="products-item__thumb">
 										<picture
 											><source type="image/webp" srcset="img/vent/9.webp" />
@@ -522,9 +500,9 @@
 										/></picture>
 									</div>
 									<p class="products-item__name">Воздухораспределительные устройства</p>
-									<span class="products-item__price">От 18 600 ₽ за шт. </span>
-								</a>
-								<a href="#" class="products-item swiper-slide">
+									<!-- <span class="products-item__price">От 18 600 ₽ за шт. </span> -->
+								</div>
+								<div class="products-item swiper-slide">
 									<div class="products-item__thumb">
 										<picture
 											><source type="image/webp" srcset="img/vent/10.webp" />
@@ -532,10 +510,10 @@
 											<img src="img/vent/10.png" alt=""
 										/></picture>
 									</div>
-									<p class="products-item__name">Оборудование автоматики</p>
-									<span class="products-item__price">От 18 600 ₽ за шт. </span>
-								</a>
-								<a href="#" class="products-item swiper-slide">
+									<p class="products-item__name">Оборудование <br />автоматики</p>
+									<!-- <span class="products-item__price">От 18 600 ₽ за шт. </span> -->
+								</div>
+								<div class="products-item swiper-slide">
 									<div class="products-item__thumb">
 										<picture
 											><source type="image/webp" srcset="img/vent/11.webp" />
@@ -544,9 +522,9 @@
 										/></picture>
 									</div>
 									<p class="products-item__name">Канальные нагреватели и охладители</p>
-									<span class="products-item__price">От 18 600 ₽ за шт. </span>
-								</a>
-								<a href="#" class="products-item swiper-slide">
+									<!-- <span class="products-item__price">От 18 600 ₽ за шт. </span> -->
+								</div>
+								<div class="products-item swiper-slide">
 									<div class="products-item__thumb">
 										<picture
 											><source type="image/webp" srcset="img/vent/12.webp" />
@@ -554,10 +532,10 @@
 											<img src="img/vent/12.png" alt=""
 										/></picture>
 									</div>
-									<p class="products-item__name">Тепловые насосы</p>
-									<span class="products-item__price">От 18 600 ₽ за шт. </span>
-								</a>
-								<a href="#" class="products-item swiper-slide">
+									<p class="products-item__name">Тепловые <br />насосы</p>
+									<!-- <span class="products-item__price">От 18 600 ₽ за шт. </span> -->
+								</div>
+								<div class="products-item swiper-slide">
 									<div class="products-item__thumb">
 										<picture
 											><source type="image/webp" srcset="img/vent/13.webp" />
@@ -566,8 +544,8 @@
 										/></picture>
 									</div>
 									<p class="products-item__name">Системы отопления и нагрева воды</p>
-									<span class="products-item__price">От 18 600 ₽ за шт. </span>
-								</a>
+									<!-- <span class="products-item__price">От 18 600 ₽ за шт. </span> -->
+								</div>
 							</div>
 							<div class="partners-bottom">
 								<div class="partners-pagination"></div>
@@ -610,78 +588,31 @@
 						</div>
 					</div>
 				</section>
-				<section class="service-form section" data-aos="fade-up">
-					<div class="container">
-						<div class="service-form-wrapper">
-							<form class="form">
-								<div class="row">
-									<div class="col-lg-6">
-										<div class="form__title section-title">Заполните данные, загрузите проект (если есть) или любые другие файлы</div>
-										<div class="form__text">
-											Мы свяжемся с вами и <span>рассчитаем стоимость, сроки доставки и монтажа</span> вентиляции или системы холодоснабжения
-										</div>
-									</div>
-									<div class="col-lg-6">
-										<div class="form__label">
-											<label for="name_field">Имя <span class="required">*</span></label>
-											<input id="name_field" type="text" class="form__input" placeholder="Ваше имя" />
-										</div>
-										<div class="form__label">
-											<label for="phone_field">Телефон <span class="required">*</span></label>
-											<input id="phone_field" type="tel" class="form__input" />
-										</div>
-										<div class="form__label">
-											<label for="comment_field">Комментарий <span class="required">*</span></label>
-											<textarea id="comment_field" class="form__input form__textarea" placeholder="Ваш комментарий"></textarea>
-										</div>
-										<label class="form__file">
-											<span
-												><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-													<path
-														d="M14.2929 7.36645L8.16621 13.4931C7.41565 14.2437 6.39766 14.6653 5.33621 14.6653C4.27475 14.6653 3.25677 14.2437 2.50621 13.4931C1.75565 12.7425 1.33398 11.7246 1.33398 10.6631C1.33398 9.60166 1.75565 8.58367 2.50621 7.83311L8.21954 2.11978C8.71992 1.61852 9.39892 1.33656 10.1072 1.33594C10.8154 1.33531 11.4949 1.61607 11.9962 2.11645C12.4975 2.61682 12.7794 3.29583 12.78 4.00409C12.7807 4.71235 12.4999 5.39185 11.9995 5.89311L6.27288 11.6064C6.02269 11.8566 5.68336 11.9972 5.32954 11.9972C4.97572 11.9972 4.6364 11.8566 4.38621 11.6064C4.13602 11.3563 3.99547 11.0169 3.99547 10.6631C3.99547 10.3093 4.13602 9.96997 4.38621 9.71978L10.0462 4.06645"
-														stroke="#228EFD"
-														stroke-linecap="round"
-														stroke-linejoin="round"
-													/>
-												</svg>
-												Прикрепить файл
-											</span>
-											<input type="file" name="" id="" />
-										</label>
-										<div class="form-bottom">
-											<button class="btn form__btn">Заказать расчет</button>
-											<label class="form__acceptance">
-												<input type="checkbox" checked />
-												<span>Даю свое согласие на обработку персональных данных</span>
-											</label>
-										</div>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-					<!-- /.container -->
-				</section>
-				<!-- /.service-form section -->
+				@@include('components/page-blocks/_service-form.html')
 				<section class="text-block section">
 					<div class="container">
 						<div class="col-md-7">
 							<h2 class="section-title text-block__title" data-aos="fade-right">Основные узлы вентиляционных систем</h2>
 							<div class="text-block-wrapper">
-								<p>
-									Рекуператор - это «сердце» приточно-вытяжной вентиляции с функцией теплообмена. Он отвечает за передачу тепла отработанного воздуха
-									свежему. Прибор забирает тепло из выходящего потока и передает его поступающему с улицы. В итоге температура воздуха в помещении
-									стабильно постоянная.
-								</p>
+								<div class="text-block__exceprt">
+									<p>
+										Рекуператор - это «сердце» приточно-вытяжной вентиляции с функцией теплообмена. Он отвечает за передачу тепла отработанного
+										воздуха свежему. Прибор забирает тепло из выходящего потока и передает его поступающему с улицы. В итоге температура воздуха в
+										помещении стабильно постоянная.
+									</p>
+								</div>
 
-								<p>
-									Важным элементом любой вентиляционной системы являются фильтры, основная задача которых - обеспечить надлежащую чистоту приточного и
-									вытяжного потока. В установках используются элементы предварительной (класс G), тонкой (класс F) и абсолютной очистки (класс H). Еще
-									одним элементов вентиляционной системы, нашедши широкое применение, стали водяные охладители. Их задача - охлаждение воздушного
-									потока. Принцип работы этих устройств достаточно прост: нагретый воздух из помещения попадает (или принудительно засасывается)
-									внутрь агрегата, где соприкасается с поверхностью испарителя. Охлаждаясь до требуемой температуры, воздух распределяется по
-									помещению.
-								</p>
+								<div class="text-block__content">
+									<p>
+										Важным элементом любой вентиляционной системы являются фильтры, основная задача которых - обеспечить надлежащую чистоту приточного
+										и вытяжного потока. В установках используются элементы предварительной (класс G), тонкой (класс F) и абсолютной очистки (класс H).
+										Еще одним элементов вентиляционной системы, нашедши широкое применение, стали водяные охладители. Их задача - охлаждение
+										воздушного потока. Принцип работы этих устройств достаточно прост: нагретый воздух из помещения попадает (или принудительно
+										засасывается) внутрь агрегата, где соприкасается с поверхностью испарителя. Охлаждаясь до требуемой температуры, воздух
+										распределяется по помещению.
+									</p>
+								</div>
+								<a href="#" class="text-block__btn btn btn--secondary show-more">Подробнее</a>
 							</div>
 						</div>
 					</div>
@@ -693,28 +624,44 @@
 						<div class="col-md-7">
 							<h2 class="section-title text-block__title" data-aos="fade-right">Кондиционирование</h2>
 							<div class="text-block-wrapper">
-								<p>
-									Кондиционирование – это процесс изменение параметров воздуха, с возможностью регулировки разные характеристик окружающей среды:
-									температуры, относительной влажности, чистоты и разделения.
-								</p>
+								<div class="text-block__excerpt">
+									<p>
+										Кондиционирование – это процесс изменение параметров воздуха, с возможностью регулировки разные характеристик окружающей среды:
+										температуры, относительной влажности, чистоты и разделения.
+									</p>
 
-								<p>Современные системы кондиционирования могут быть классифицированы по следующим признакам:</p>
-								<ul>
-									<li>по основному назначению (объекту применения): комфортные и технологические;</li>
-									<li>по принципу расположения кондиционера по отношению к обслуживаемому помещению: центральные и местные;</li>
-									<li>по наличию собственного (входящего в конструкцию кондиционера) источника тепла и холода: автономные и неавтономные;</li>
-									<li>по принципу действия: прямоточные, рециркуляционные и комбинированные;</li>
-									<li>по степени обеспечения метеорологических условий в обслуживаемом помещении: первого, второго и третьего класса;</li>
-									<li>по количеству обслуживаемых помещений (локальных зон): однозональные и многозональные;</li>
-									<li>по давлению, развиваемому вентиляторами кондиционеров: низкого, среднего и высокого давления.</li>
-								</ul>
+									<p>Современные системы кондиционирования могут быть классифицированы по следующим признакам:</p>
+								</div>
+								<div class="text-block__content">
+									<ul>
+										<li>по основному назначению (объекту применения): комфортные и технологические;</li>
+										<li>по принципу расположения кондиционера по отношению к обслуживаемому помещению: центральные и местные;</li>
+										<li>по наличию собственного (входящего в конструкцию кондиционера) источника тепла и холода: автономные и неавтономные;</li>
+										<li>по принципу действия: прямоточные, рециркуляционные и комбинированные;</li>
+										<li>по степени обеспечения метеорологических условий в обслуживаемом помещении: первого, второго и третьего класса;</li>
+										<li>по количеству обслуживаемых помещений (локальных зон): однозональные и многозональные;</li>
+										<li>по давлению, развиваемому вентиляторами кондиционеров: низкого, среднего и высокого давления.</li>
+									</ul>
 
-								Все типы кондиционеров можно разделить на: - сплит-системы (настенные, напольно-потолочные, колонного типа, кассетного типа,
-								многозональные с изменяемым расходом хладагента); - напольные кондиционеры и кондиционеры сплит-системы с приточной вентиляцией; -
-								системы с фанкойлами; - системы с чиллерами; - крышные кондиционеры; - шкафные кондиционеры; - прецизионные кондиционеры; -
-								центральные кондиционеры. Наличие широкого спектра систем кондиционировании требует от проектировщиков больших теоретических и
-								практических знаний для оптимального подбора оборудования для конкретных требований в производственных, торговых или общественных
-								помещений.
+									<p>Все типы кондиционеров можно разделить на:</p>
+									<ul>
+										<li>
+											сплит-системы (настенные, напольно-потолочные, колонного типа, кассетного типа, многозональные с изменяемым расходом
+											хладагента);
+										</li>
+										<li>напольные кондиционеры и кондиционеры сплит-системы с приточной вентиляцией; - системы с фанкойлами;</li>
+										<li>системы с чиллерами;</li>
+										<li>крышные кондиционеры;</li>
+										<li>шкафные кондиционеры;</li>
+										<li>прецизионные кондиционеры;</li>
+										<li>центральные кондиционеры.</li>
+									</ul>
+									<p>
+										Наличие широкого спектра систем кондиционировании требует от проектировщиков больших теоретических и практических знаний для
+										оптимального подбора оборудования для конкретных требований в производственных, торговых или общественных помещений.
+									</p>
+								</div>
+								<a href="#" class="text-block__btn btn btn--secondary show-more">Подробнее</a>
 							</div>
 						</div>
 					</div>

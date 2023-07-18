@@ -4,7 +4,9 @@
     display: grid
     grid-template-columns: repeat(5,1fr)
     gap: 32px
-
+  &__title
+    max-width: 850px
+    margin-bottom: 64px
   &-item
     border-radius: 8px
     background: #fff
@@ -16,19 +18,21 @@
     gap: 16px
     height: auto
   &-item__thumb
-    margin: auto
+    margin: 0 auto
     picture, img
-      max-height: 138px
+      height: 138px
       width: 100%
   &-item__name
     @include font( 16px, 140%,600)
+    margin-bottom: auto
   &-item__price
     color: $main-color
     font-size: 18px
     transition: .3s
     margin-top: auto
     padding: 2px 0
-
+  .partners-bottom
+    display: none
 @media screen and ( min-width: 992px )
   .products-item:hover .products-item__price
     border-radius: 4px

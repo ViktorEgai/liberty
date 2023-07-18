@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	};
 	initObjectsSwiper();
 	window.addEventListener("resize", initObjectsSwiper);
-	
+
 	// products slider
 	let productsSwiper = undefined;
 	const initProductsSwiper = () => {
@@ -183,19 +183,17 @@ document.addEventListener("DOMContentLoaded", () => {
 					breakpoints: {
 						320: {
 							grid: {
-								fill: 'row',
+								fill: "row",
 								rows: 2,
 							},
 							slidesPerView: 1,
-
 						},
 						576: {
 							slidesPerView: 2,
-							spaceBetween: 20
-						}
-					}
+							spaceBetween: 20,
+						},
+					},
 				});
-				
 			} else if (screenWidth > 992 && productsSwiper != undefined) {
 				productsSwiper.destroy();
 				productsSwiper = undefined;
@@ -203,8 +201,6 @@ document.addEventListener("DOMContentLoaded", () => {
 					systemSwiperSlide = document.querySelectorAll(".products .swiper-slide");
 				systemSwiperWrapper.removeAttribute("style");
 				systemSwiperSlide.forEach((slide) => slide.removeAttribute("style"));
-
-			
 			}
 		}
 	};
@@ -382,7 +378,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	sertificatesSlider();
 
-	
+	const showMoreText = () => {
+		const textBlock = document.querySelectorAll(".text-block");
+		if (textBlock !== null) {
+			textBlock.forEach((block) => {
+				block.addEventListener("click", (e) => {
+					const t = e.target;
+					if (t.closest(".show-more")) {
+						e.preventDefault();
+						const content = block.querySelector(".text-block__content"),
+							btn = t.closest(".show-more");
+						btn.classList.add("hidden");
+						content.classList.add("active");
+					}
+				});
+			});
+		}
+	};
+	showMoreText();
 
 	// tabs
 	const tabs = () => {
@@ -396,20 +409,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 				loop: false,
 				slideToClickedSlide: true,
-				on: {
-							reachEnd: function () {
-								this.snapGrid = [...this.slidesGrid];
-							},
-						},
+				// on: {
+				// 			reachEnd: function () {
+				// 				this.snapGrid = [...this.slidesGrid];
+				// 			},
+				// 		},
+				navigation: {
+					nextEl: ".tab-nav__arrow--next",
+					prevEl: ".tab-nav__arrow--prev",
+				},
 				breakpoints: {
 					// when window width is >= 320px
 					320: {
 						slidesPerView: "auto",
-						navigation: {
-							nextEl: ".tab-nav__arrow--next",
-							prevEl: ".tab-nav__arrow--prev",
-						},
-						
 					},
 					1600: {
 						slidesPerView: 6,
@@ -439,6 +451,86 @@ document.addEventListener("DOMContentLoaded", () => {
 	};
 	tabs();
 
+	// dropdown
+
+	const dropdown = () => {
+		class ItcCollapse {
+			constructor(target, duration = 350) {
+				this._target = target;
+				this._duration = duration;
+			}
+			show() {
+				const el = this._target;
+				if (el.classList.contains("collapsing") || el.classList.contains("collapse_show")) {
+					return;
+				}
+				el.classList.remove("collapse");
+				const height = el.offsetHeight;
+				el.style.height = 0;
+				el.style.overflow = "hidden";
+				el.style.transition = `height ${this._duration}ms ease`;
+				el.classList.add("collapsing");
+				el.offsetHeight;
+				el.style.height = `${height}px`;
+				window.setTimeout(() => {
+					el.classList.remove("collapsing");
+					el.classList.add("collapse");
+					el.classList.add("collapse_show");
+					el.style.height = "";
+					el.style.transition = "";
+					el.style.overflow = "";
+				}, this._duration);
+			}
+			hide() {
+				const el = this._target;
+				if (el.classList.contains("collapsing") || !el.classList.contains("collapse_show")) {
+					return;
+				}
+				el.style.height = `${el.offsetHeight}px`;
+				el.offsetHeight;
+				el.style.height = 0;
+				el.style.overflow = "hidden";
+				el.style.transition = `height ${this._duration}ms ease`;
+				el.classList.remove("collapse");
+				el.classList.remove("collapse_show");
+				el.classList.add("collapsing");
+				window.setTimeout(() => {
+					el.classList.remove("collapsing");
+					el.classList.add("collapse");
+					el.style.height = "";
+					el.style.transition = "";
+					el.style.overflow = "";
+				}, this._duration);
+			}
+			toggle() {
+				this._target.classList.contains("collapse_show") ? this.hide() : this.show();
+			}
+		}
+
+		const dropdownSection = document.querySelector(".dropdown");
+
+		const body = dropdownSection.querySelectorAll(".dropdown-body");
+		const title = dropdownSection.querySelectorAll(".dropdown-item-title");
+		const collapse = new ItcCollapse(body[0]);
+		title[0].classList.add('active');
+
+		collapse.show();
+
+		if (dropdownSection !== null) {
+			dropdownSection.addEventListener("click", (e) => {
+				let t = e.target;
+				if (t.closest(".dropdown-item-title")) {
+					const title = t.closest(".dropdown-item-title");
+					title.classList.toggle("active");
+
+					const body = title.nextElementSibling;
+					const collapse = new ItcCollapse(body);
+					collapse.toggle();
+				}
+			});
+		}
+	};
+	dropdown();
 	// маска телефона
 	setTimeout(() => {
 		const telInput = document.querySelectorAll('input[type="tel"]');

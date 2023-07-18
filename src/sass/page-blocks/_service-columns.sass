@@ -3,14 +3,29 @@
   &__title
     @include font (24px, 140%,600)
     margin-bottom: 1.5em
+  &-title
+    margin-bottom: 64px
   &-item
     padding: 48px 32px
     height: 100%
     background-color: #fff
     box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.06)
     border-radius: 8px
+    position: relative
+    z-index: 1
     p
       margin-bottom: 1em
+    &::before
+      content: ' '
+      position: absolute
+      bottom: 0
+      right: 0
+      width: 153px
+      height: 123px
+      display: block
+      background-repeat: no-repeat
+      background-size: contain
+      z-index: -1
   &__list
 
   &__list-item
@@ -36,7 +51,8 @@
       left: 0
 @media screen and ( max-width: 992px )
   .service-columns
-
+    &-title
+      margin-bottom: 32px
     &__title
       font-size: 18px
       margin-bottom: 1.5em
@@ -44,3 +60,6 @@
       font-size: 14px
       p
         margin-bottom: 1em
+@media screen and ( max-width: 768px )
+  .service-columns-item:before
+    display: none

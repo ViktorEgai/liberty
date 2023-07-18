@@ -44,18 +44,19 @@
 
     &::before
 
-      width: 487px
-      height: 519px
-
       top: 0%
-      left: -20%
+      left: -28%
     &::after
 
-      width: 538px
-      height: 570px
-
       top: 2%
-      right: -22%
+      right: -28%
+@media screen and ( max-width: 1400px )
+  .colored-bg
+
+    &::before
+      left: -34%
+    &::after
+      right: -34%
 @media screen and ( max-width: 1200px )
   .colored-bg
     &::before, &::after
