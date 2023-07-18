@@ -28,6 +28,12 @@
           height: 22px
           background-image: url("data:image/svg+xml;charset=utf8, %3Csvg width='22' height='22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Ccircle cx='11' cy='11' r='11' fill='%23228EFD' fill-opacity='.08'/%3E%3Cpath d='m15 8-5.5 6L7 11.273' stroke='%23228EFD' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h22v22H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E")
           background-repeat: no-repeat
+  &__waranty
+    border-radius: 8px
+    background: #FFF
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.06)
+    padding: 16px
+    width: fit-content
   &__bottom
     margin-top: 48px
     display: flex
@@ -66,8 +72,21 @@
     color: $sec-text-color
     margin-top: 64px
     svg
-      margin-right: 8px
 
+      flex: 1 1 auto
+      width: 22px
+      height: 22px
+      margin-right: 8px
+    &--transparent
+      border-radius: none
+      background-color: transparent
+      box-shadow: none
+      padding: 0
+      margin-top: 32px
+      font-size: 15px
+
+    p
+      max-width: calc(100% - 30px)
 @media screen and ( max-width: 1200px )
   .service-hero
     &__title
