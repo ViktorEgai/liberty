@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		let offsetTop = false;
 		const aboutSection = document.querySelector(".about");
 		if (aboutSection !== null) {
-			window.addEventListener("scroll", () => {
+			const startAnimation = () => {
 				if (aboutSection.getBoundingClientRect().top < 250) {
 					offsetTop = true;
 				}
@@ -237,7 +237,9 @@ document.addEventListener("DOMContentLoaded", () => {
 						animate();
 					});
 				}
-			});
+			}
+			startAnimation();
+			window.addEventListener("scroll", startAnimation);
 		}
 	};
 	counterAnimation();
@@ -378,6 +380,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	sertificatesSlider();
 
+	// team swiper
+	const teamSlider = () => {
+		const slider = document.querySelector(".team-swiper");
+		if (slider !== null) {
+			const swiper = new Swiper(slider, {
+				// Optional parameters
+				slidesPerView: 4,
+				spaceBetween: 32,
+				loop: true,
+
+				// If we need pagination
+				pagination: {
+					el: ".partners-pagination",
+					clickable: true,
+				},
+
+				// Navigation arrows
+				navigation: {
+					nextEl: ".partners-arrow--next",
+					prevEl: ".partners-arrow--prev",
+				},
+				breakpoints: {
+					// when window width is >= 320px
+					320: {
+						slidesPerView: 1,
+						spaceBetween: 20,
+					},
+
+				576: {
+						slidesPerView: 2,
+					},
+					// when window width is >= 640px
+					992: {
+						slidesPerView: 3,
+					},
+					1200: { 
+						slidesPerView: 4,
+
+					}, 
+					1400: {
+						slidesPerView: 5,
+					},
+				},
+			});
+			
+		}
+	};
+
+	teamSlider();
+
 	const showMoreText = () => {
 		const textBlock = document.querySelectorAll(".text-block");
 		if (textBlock !== null) {
@@ -393,6 +445,17 @@ document.addEventListener("DOMContentLoaded", () => {
 					}
 				});
 			});
+		}
+
+		const descrBlock = document.querySelector('.descr-block');
+		if (descrBlock !== null ) {
+			const btn = descrBlock.querySelector('.descr-block__btn');
+			btn.addEventListener('click', () => {
+				const content = descrBlock.querySelector('.descr-block__text-content');
+				content.classList.add('active');
+				btn.classList.add('hidden');
+
+			})
 		}
 	};
 	showMoreText();

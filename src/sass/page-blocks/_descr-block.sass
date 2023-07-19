@@ -1,0 +1,51 @@
+.descr-block
+  position: relative
+  z-index: 1
+  &::before
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    width: 350px
+    height: 350px
+    border-radius: 50%
+    -webkit-filter: blur(500px)
+    -moz-filter: blur(500px)
+    -ms-filter: blur(500px)
+    filter: blur(500px)
+    background-color: $main-color
+    z-index: -1
+
+  &-wrapper
+    border-radius: 8px
+    background-color: #fff
+    padding: 48px
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.06)
+  &__text
+    @include font( 18px, 140%)
+    p
+      margin: 0 0 0.8em 0
+    span
+      color: $main-color
+      font-weight: 600
+  &__btn
+    display: none
+@media screen and ( max-width: 992px )
+  .descr-block
+    &__text-content
+      display: none
+      &.active
+        display: block
+    &__btn
+      display: block
+      margin: 24px auto 0
+      &.hidden
+        display: none
+    &-wrapper
+      padding: 32px
+    &__text
+      font-size: 16px
+@media screen and ( max-width: 440px)
+  .descr-block__btn
+    width: 100%
