@@ -207,6 +207,56 @@ document.addEventListener("DOMContentLoaded", () => {
 	initProductsSwiper();
 	window.addEventListener("resize", initProductsSwiper);
 
+	// job slider
+	let jobSwiper = undefined;
+	const initJobSwiper = () => {
+		const screenWidth = window.innerWidth;
+		const sliderWrapper = document.querySelector(".job-swiper .swiper-wrapper");
+	
+		if (sliderWrapper !== null) {
+				const slides = sliderWrapper.querySelectorAll('.swiper-slide')
+			if (screenWidth < 992 && jobSwiper == undefined) {
+				jobSwiper = new Swiper(".job-swiper", {
+					// Optional parameters
+					slidesPerView: 1,
+					slidesPerGroup: 1,
+
+					spaceBetween: "20px",
+
+					// If we need pagination
+					pagination: {
+						el: ".systems-pagination",
+						clickable: true,
+					},
+
+					// Navigation arrows
+					navigation: {
+						nextEl: ".systems-arrow--next",
+						prevEl: ".systems-arrow--prev",
+					},
+				
+				});
+
+				sliderWrapper.classList.remove('row');
+				slides.forEach( item => item.classList.remove('mb-4'))
+			} else if (screenWidth > 992 && jobSwiper != undefined) {
+				jobSwiper.destroy();
+				jobSwiper = undefined;
+				const jobSwiperWrapper = document.querySelector(".job .swiper-wrapper"),
+					jobSwiperSlide = document.querySelectorAll(".job .swiper-slide");
+				jobSwiperWrapper.removeAttribute("style");
+				jobSwiperSlide.forEach((slide) => slide.removeAttribute("style"));
+				
+				sliderWrapper.classList.add('row');
+				slides.forEach( item => item.classList.add('mb-4'))
+
+
+			}
+		}
+	};
+	initJobSwiper();
+	window.addEventListener("resize", initJobSwiper);
+
 	// counter animation
 	const counterAnimation = () => {
 		let offsetTop = false;
@@ -330,6 +380,33 @@ document.addEventListener("DOMContentLoaded", () => {
 	};
 
 	newsSlider();
+
+	// single-object swiper
+	const singleObjectSlider = () => {
+		const slider = document.querySelector(".single-object-swiper");
+		if (slider !== null) {
+			const swiper = new Swiper(slider, {
+				// Optional parameters
+				slidesPerView: 1,			
+				loop: true,
+
+				// If we need pagination
+				pagination: {
+					el: ".single-object-pagination",
+					clickable: true,
+				},
+
+				// Navigation arrows
+				navigation: {
+					nextEl: ".single-object__arrow--next",
+					prevEl: ".single-object__arrow--prev",
+				},
+				
+			});
+		}
+	};
+
+	singleObjectSlider();
 
 	// sertificates swiper
 	const sertificatesSlider = () => {
@@ -460,6 +537,19 @@ document.addEventListener("DOMContentLoaded", () => {
 	};
 	showMoreText();
 
+	// показать имя файла 
+	const  showFileName =() => {
+		const inputs = document.querySelectorAll('input[type="file"]');
+		inputs.forEach(input => {
+			input.addEventListener( 'change', () => {
+				const file = input.files;
+				const span = input.parentElement.querySelector('span');
+				 span.textContent = file[0].name
+			});
+		})
+	};
+	showFileName();
+	
 	// tabs
 	const tabs = () => {
 		const tabNav = document.querySelector(".tab-nav");

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('components/page-blocks/_head.html',{ "title":"Liberty - Engineering systems", })
+
+	<body>
+		<div class="wrapper">
+			@@include('components/page-blocks/_header.html')
+			<main class="main">
+				<div class="breadcrumbs">
+					<div class="container">
+						<a href="/">Главная</a> - <a href="about.html"> О компании </a> - <a href="job.html">Вакансии</a> -
+						<span>Инженер по холодильному оборудованию</span>
+					</div>
+				</div>
+
+				<section class="single-job section colored-bg">
+					<div class="container">
+						<div class="single-job-wrapper">
+							<div class="row">
+								<div class="col-lg-8 pe-5">
+									<h1 class="single-job__title section-title">Инженер по холодильному оборудованию</h1>
+									<ul class="single-job-tags">
+										<li class="single-job-tags__item">От 60.000 руб/мес</li>
+										<li class="single-job-tags__item">Опыт работы: от 1 года</li>
+									</ul>
+									<div class="single-job-descr">
+										<div class="single-job-descr__text">
+											<h2 class="single-job-descr__title">Требования:</h2>
+											<p>Мужчина до ХХ лет, образование ХХХ (профильное), опыт работы от Х лет в аналогичной должности.</p>
+										</div>
+										<div class="single-job-descr__text">
+											<h2 class="single-job-descr__title">Обязанности:</h2>
+											<p>
+												Выполнение работ по проектированию, монтажу, ремонту, техническому обслуживанию холодильного оборудования. Ведение
+												документации по выполненным работам. Консультация клиента о порядке эксплуатации оборудования.
+											</p>
+										</div>
+										<div class="single-job-descr__text">
+											<h2 class="single-job-descr__title">Условия:</h2>
+											<ul class="single-job-descr__list">
+												<li class="single-job-descr__list-item --svg__check-before">График работы ХХХ</li>
+												<li class="single-job-descr__list-item --svg__check-before">З/п от ХХХХ (в зависимости от квалификации)</li>
+												<li class="single-job-descr__list-item --svg__check-before">Необходимо наличие собственного автомобиля.</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 d-none d-lg-block">
+									<div class="single-job__image">
+										<picture
+											><source type="image/webp" srcset="img/single-job.webp" />
+											<source type="image/png" srcset="img/single-job.png" />
+											<img src="img/single-job.png" alt=""
+										/></picture>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /.container -->
+				</section>
+				<!-- /.single-job section -->
+
+				<section class="service-form service-form--white section colored-bg" data-aos="fade-up">
+					<div class="container">
+						<div class="service-form-wrapper">
+							<form class="form">
+								<div class="row">
+									<div class="col-lg-6">
+										<h2 class="form__title section-title">Отправить резюме</h2>
+										<div class="form__text">Мы гарантируем, что ваше <span>резюме будет тщательно рассмотрено</span> нашей командой.</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form__label">
+											<label for="name_field">ФИО <span class="required">*</span></label>
+											<input id="name_field" type="text" class="form__input" placeholder="ФИО" />
+										</div>
+										<div class="form__row">
+											<div class="form__label">
+												<label for="phone_field">Телефон <span class="required">*</span></label>
+												<input id="phone_field" type="tel" class="form__input" />
+											</div>
+
+											<div class="form__label">
+												<label for="email_field">Email <span class="required">*</span></label>
+												<input id="email_field" type="email" class="form__input" placeholder="example@mail.com" />
+											</div>
+
+											<div class="form__label">
+												<label for="city_field">Город <span class="required">*</span></label>
+												<input id="city_field" type="text" class="form__input" placeholder="Москва" />
+											</div>
+										</div>
+										<div class="form__label">
+											<label for="comment_field">Сопроводительное письмо <span class="required">*</span></label>
+											<textarea id="comment_field" class="form__input form__textarea" placeholder="Ваше сопроводительное сообщение..."></textarea>
+										</div>
+										<label class="form__file">
+											<span
+												><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M14.2929 7.36645L8.16621 13.4931C7.41565 14.2437 6.39766 14.6653 5.33621 14.6653C4.27475 14.6653 3.25677 14.2437 2.50621 13.4931C1.75565 12.7425 1.33398 11.7246 1.33398 10.6631C1.33398 9.60166 1.75565 8.58367 2.50621 7.83311L8.21954 2.11978C8.71992 1.61852 9.39892 1.33656 10.1072 1.33594C10.8154 1.33531 11.4949 1.61607 11.9962 2.11645C12.4975 2.61682 12.7794 3.29583 12.78 4.00409C12.7807 4.71235 12.4999 5.39185 11.9995 5.89311L6.27288 11.6064C6.02269 11.8566 5.68336 11.9972 5.32954 11.9972C4.97572 11.9972 4.6364 11.8566 4.38621 11.6064C4.13602 11.3563 3.99547 11.0169 3.99547 10.6631C3.99547 10.3093 4.13602 9.96997 4.38621 9.71978L10.0462 4.06645"
+														stroke="#228EFD"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													/>
+												</svg>
+												Прикрепить файл с резюме
+											</span>
+											<input type="file" name="" id="" />
+										</label>
+										<div class="form-bottom">
+											<button class="btn form__btn">Получить консультацию</button>
+											<label class="form__acceptance">
+												<input type="checkbox" checked />
+												<span>Даю свое согласие на обработку персональных данных</span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- /.container -->
+				</section>
+				<!-- /.service-form section -->
+			</main>
+		</div>
+		@@include('components/page-blocks/_footer.html') @@include('components/page-blocks/_popup.html') @@include('components/page-blocks/_scripts.html')
+	</body>
+</html>

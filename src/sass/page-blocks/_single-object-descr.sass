@@ -1,0 +1,31 @@
+.single-object-descr
+
+  &-wrapper
+
+  &__image
+    margin-right: 10%
+    height: 290px
+    picture, img
+      height: 100%
+      width: 100%
+      object-fit: cover
+      border-radius: 8px
+  &__title
+    margin-bottom: 24px
+    @include font(32px,120%,600 )
+    &--mobile
+      display: none
+  &__text
+    p:not(:last-child)
+      margin-bottom: 24px
+@media screen and ( max-width: 1400px )
+  .single-object-descr
+    &__image
+      margin-right: 0
+@media screen and ( max-width: 992px )
+  .single-object-descr
+    &__title
+      display: none
+      &--mobile
+        display: block
+        margin-bottom: 38px

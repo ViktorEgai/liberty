@@ -1,0 +1,60 @@
+.single-job
+  padding-top: 64px
+  &-wrapper
+
+  &__title
+    margin-bottom: 16px
+  &-tags
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    margin-bottom: 64px
+    gap: 16px
+  &-tags__item
+    padding: 10px
+    color: $main-color
+    font-weight: 700
+    border-radius: 4px
+    background: rgba(34, 142, 253, 0.08)
+    width: fit-content
+
+  &-descr
+  &-descr__text:not(:last-child)
+    margin-bottom: 40px
+  &-descr__title
+    @include font(18px, 140%,600)
+    margin-bottom: 12px
+  &-descr__list
+    &-item
+      position: relative
+      padding-left: 30px
+      &:not(:last-child)
+        margin-bottom: 8px
+      &::before
+        top: 0
+        left: 0
+        position: absolute
+        width: 22px
+        height: 22px
+        background-size: contain
+  &__image
+    picture,img
+      max-width: 100%
+      object-fit: cover
+      border-radius: 8px
+@media screen and ( max-width: 992px )
+  .single-job
+    &::before
+      display: block
+      top: 40%
+      width: 350px
+      height: 350px
+    &-tags
+      margin-bottom: 24px
+
+      &__item
+
+    &-descr__text:not(:last-child)
+      margin-bottom: 24px
+    &-descr__title
+      font-size: 16px

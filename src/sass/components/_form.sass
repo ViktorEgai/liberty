@@ -51,7 +51,7 @@
       height: 16px
       border: 1px solid rgba(0,0,0,.5)
       border-radius: 5px
-      margin-right: 10px
+      margin: 0 10px 0 0
       position: relative
       display: flex
       align-items: center
@@ -82,6 +82,23 @@
     span
       display: block
       max-width: 265px
+    &--wide
+      margin-left: 0
+      margin-top: 24px
+      span
+        max-width: calc(100% - 26px)
+  &__social
+    margin-left: 16px
+  &__row
+    display: flex
+    align-items: center
+    justify-content: space-between
+    .form__label
+      width: 32.5%
+    .iti__selected-flag
+      padding-right: 8px !important
+    .form__input[type="tel"]
+      padding-left: 70px !important
   .iti__flag
     box-shadow: none
     border-radius: 2px
@@ -111,6 +128,15 @@
   .iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag
     opacity: 1
     background-color: transparent
+@media screen and ( max-width: 768px )
+  .form__row
+    flex-direction: column
+    .form__label
+      width: 100%
+    .iti__selected-flag
+      padding-right: 16px !important
+    .form__input[type="tel"]
+      padding-left: 90px !important
 
 @media screen and ( max-width: 576px )
   .form-bottom
@@ -118,3 +144,6 @@
   .form__acceptance
     margin-left: 0
     margin-top: 16px
+  .form__social
+    margin: 16px 0 0 0
+    align-self: start

@@ -3,6 +3,12 @@
   &-wrapper
   &__title
     margin-bottom: 64px
+  &__descr
+    margin-top: -32px
+    margin-bottom: 140px
+    @include font (18px, 140%)
+    p,ul,ol
+      margin: 1em 0
   &-item
     border-radius: 8px
     background: #FFF
@@ -10,7 +16,7 @@
     box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.06)
     display: flex
     flex-direction: column
-
+    height: 100%
   &-item__title
     @include font( 24px, 140%,600)
     margin-bottom: 8px
@@ -50,3 +56,30 @@
   &__btn
     width: fit-content
     margin: 48px auto 0
+@media screen and ( max-width: 992px )
+  .job
+    padding-top: 16px
+
+    &-swiper
+      padding: 10px
+      margin: -10px
+    .systems-bottom
+      margin-top: 48px
+    .systems-bottom, .systems-arrows
+      display: flex
+      align-items: center
+    .systems-arrows
+      gap: 8px
+    &.colored-bg
+      &::before
+        display: block
+        width: 385px
+        height: 450px
+        left: auto
+        top: auto
+        bottom: 20%
+        right: 0
+    &-item__title
+      font-size: 18px
+    &-item__text-title
+      font-size: 16px
