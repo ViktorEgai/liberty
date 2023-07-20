@@ -1,5 +1,24 @@
 .form-with-image
-  z-index: 3
+  position: relative
+  z-index: 1
+  &::after
+    content: ''
+    position: absolute
+
+    -webkit-filter: blur(500px)
+    -moz-filter: blur(500px)
+    -ms-filter: blur(500px)
+    filter: blur(500px)
+
+    width: 538px
+    height: 570px
+    border-radius: 50%
+
+    background-color: $main-color
+
+    z-index: -1
+    top: 2%
+    right: -25%
   &-wrapper
 
   &__image
@@ -17,3 +36,15 @@
       width: 100%
       margin: auto
   &__form-block
+@media screen and ( max-width: 992px )
+  .form-with-image
+
+    &::after
+      width: 360px
+      height: 400px
+@media screen and ( max-width: 440px )
+
+  .form-with-image
+
+    &::after
+      right: -40%

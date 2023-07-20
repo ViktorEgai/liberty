@@ -1,10 +1,19 @@
 .objects
+  &--page
+    .objects-item__image
+      picture,img
 
+        height: 328px
   &-wrapper
 
   &__title
     margin-bottom: 64px
+  &__categories
+    margin-bottom: 48px
   &-item
+    display: flex
+    flex-direction: column
+    height: 100%
   &-item__image
     margin-bottom: 24px
     filter: grayscale(1)
@@ -26,6 +35,7 @@
     display: flex
     align-items: center
     flex-wrap: wrap
+    margin-top: auto
   &-item-attr__item
     border-radius: 4px
     background: rgba(34, 142, 253, 0.08)
@@ -35,14 +45,43 @@
   &__btn
     width: fit-content
     margin: 64px auto 0
+  &-item__more
+    margin-top: 24px
+    display: flex
+    align-items: center
+    font-weight: 600
 
+    color: $ter-text-color
+  &-item__more,path
+    transition: .3s
 @media screen and ( min-width: 992px )
-  .objects-item:hover .objects-item__image
-    filter: grayscale(0)
+  .objects-item:hover
+    .objects-item__image
+      filter: grayscale(0)
+    .objects-item__more
+      color: $main-color
+      path
+        stroke: $main-color
+@media screen and ( max-width: 992px )
+  .objects--page
+
+    &::before
+      display: block
+      width: 385px
+      height: 450px
+      left: 50%
+      top: 20%
+
+      // right: 0
+  .objects__categories
+    margin-bottom: 32px
 @media screen and ( max-width: 768px )
   .objects__title
     margin-bottom: 32px
+  .objects--page .objects-item__image
+    picture,img
 
+      height: 220px
 @media screen and ( max-width: 576px )
   .objects-item
     &__title

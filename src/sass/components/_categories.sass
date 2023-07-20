@@ -1,0 +1,57 @@
+.categories
+  &-list
+    display: flex
+    flex-wrap: wrap
+    gap: 8px
+
+  &-item__link
+    color: $ter-text-color
+    @include font( 16px,140%,700)
+    padding: 10px
+    display: block
+    border-radius: 4px
+    background: rgba(0, 0, 0, 0.04)
+    min-width: 95px
+    text-align: center
+    transition: .3s
+    &.active
+      background-color: $main-color
+      color: #fff
+  &-title
+    display: none
+@media screen and ( min-width: 992px )
+  .categories
+    &-list
+      display: flex !important
+    &-item__link:hover
+      background-color: $main-color
+      color: #fff
+@media screen and ( max-width: 992px )
+  .categories-title
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 13px 12px
+    border-radius: 5px
+    border: 1px solid rgba(0, 0, 0, 0.10)
+    background: #FFF
+    cursor: pointer
+    svg
+      transition: .3s
+    &.active
+      svg
+        transform: rotate(180deg)
+  .categories
+    position: relative
+    &-list
+      flex-direction: column
+      flex-wrap: nowrap
+      position: absolute
+      top: 100%
+      left: 0
+      width: 100%
+      z-index: 10
+      background-color: #fff
+      padding: 12px !important
+    &-item:first-child
+      margin-top: 32px

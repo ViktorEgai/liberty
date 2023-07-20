@@ -1,0 +1,50 @@
+.page-nav
+  display: flex
+  align-content: center
+  justify-content: space-between
+  flex-wrap: wrap
+
+  &__arrow
+    display: flex
+    align-items: center
+    gap: 8px
+    transition: .3s
+    &.disabled
+      color: $ter-text-color
+      path
+        transition: .3s
+
+        fill-opacity: .2
+.page-pagination
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 8px
+  &__item
+    a
+      border-radius: 8px
+      padding: 9px 0
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 40px
+      height: 40px
+      transition: .3s
+      &.active
+        background-color: $main-color
+        color: #fff
+@media screen and ( min-width: 992px )
+  .page-pagination__item a:hover
+    background-color: $main-color
+    color: #fff
+  .page-nav__arrow:not(.disabled):hover
+    color: $main-color
+    path
+      fill-opacity: 1
+      fill: $main-color
+@media screen and ( max-width: 768px )
+  .page-pagination
+    order: -1
+    width: 100%
+    margin-bottom: 16px
+  .page-nav
