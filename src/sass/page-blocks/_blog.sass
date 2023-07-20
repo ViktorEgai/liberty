@@ -1,0 +1,48 @@
+.blog
+  &-wrapper
+
+  &__title
+    margin-bottom: 64px
+  &-item
+    background-color: #fff
+    display: flex
+    flex-direction: column
+    height: 100%
+    border-radius: 8px
+    overflow: hidden
+  &-item__thumb
+    picture,img
+      height: 155px
+      object-fit: cover
+  &-item-info
+    padding: 32px
+    height: 100%
+    display: flex
+    flex-direction: column
+  &-item__date
+    font-size: 14px
+    display: block
+    margin-bottom: 16px
+  &-item__title
+    font-size: 18px
+    line-height: 140%
+    font-weight: 600
+    margin-bottom: 8px
+  &-item__excerpt
+    margin-bottom: 24px
+    max-width: 345px
+  &-item__more
+    color: $ter-text-color
+    font-weight: 600
+    display: flex
+    align-items: center
+    margin-top: auto
+  &__page-nav
+    margin-top: 64px
+@media screen and ( max-width: 992px )
+  .blog
+    &::after
+      display: block
+      top: 30%
+    &__title
+      margin-bottom: 32px

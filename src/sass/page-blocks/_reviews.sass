@@ -1,0 +1,71 @@
+.reviews
+  &__title
+    margin-bottom: 64px
+  &-item
+    display: flex
+    gap: 32px
+    padding: 32px
+    background-color: #fff
+    border-radius: 8px
+    height: 100%
+  &-item__info
+    width: 220px
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-align: center
+    padding: 12px
+
+  &-item__image
+    margin-bottom: 24px
+    picture, img
+      border-radius: 50%
+      width: 99px
+      height: 99px
+      object-fit: cover
+  &-item__name
+    @include font (18px, 140%,600)
+    margin-bottom: 8px
+  &-item__descr
+    @include font (14px, 140%)
+    color: $sec-text-color
+  &-item__text
+    max-width: calc( 100% - 32px - 220px)
+    *:first-of-type
+      margin-top: 0
+    p
+      margin: 1.2em 0
+  &-item__doc
+    display: flex
+    align-items: center
+    gap: 8px
+    color: $main-color
+    margin-top: 20px
+  &__page-nav
+    margin-top: 64px
+  &__btn
+    margin: auto
+    margin-top: 32px
+@media screen and ( max-width: 1400px )
+  .reviews
+    &-item
+      flex-direction: column
+    &-item__text
+      max-width: 100%
+    &-item__info
+      width: 100%
+@media screen and ( max-width: 992px )
+  .reviews
+    &:after
+      display: block
+      top: 30%
+    &-item__text
+      p:not(:first-child)
+        display: none
+      p:nth-child(2)
+        display: block
+        white-space: nowrap
+        text-overflow: ellipsis
+        overflow: hidden
+    &__title
+      margin-bottom: 32px
