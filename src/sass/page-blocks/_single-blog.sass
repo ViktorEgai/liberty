@@ -1,0 +1,49 @@
+.single-blog
+  &::before,&::after
+    top: 30%
+    transform: scale(1.2)
+  &-wrapper
+
+  &-back
+    display: flex
+    align-items: center
+    color: $sec-text-color
+    font-size: 14px
+    margin-bottom: 16px
+    // display: block
+  &__title
+    margin-bottom: 64px
+  &__content
+    picture, img
+      width: 100%
+      max-height: 350px
+      object-fit: cover
+      margin: 32px 0
+    p,ol,ul, blockquote
+      margin: 1.5em 0
+    h2,h3,h4,h5
+      margin: 1.5em 0 1em
+    h2
+      @include font(32px, 120%,600)
+    h3
+      @include font(28px, 120%,600)
+    blockquote
+      padding: 16px
+      background-color: #fff
+      border-radius: 8px
+      position: relative
+      display: flex
+      align-items: flex-start
+      &::before
+        content: ''
+        background-image: url("data:image/svg+xml;charset=utf8, %3Csvg width='22' height='22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='.08' d='M22 11c0 6.075-4.925 11-11 11S0 17.075 0 11 4.925 0 11 0s11 4.925 11 11Z' fill='%23000' fill-opacity='.9'/%3E%3Cpath d='M10.998 17.325c.456 0 .825-.37.825-.825V9.9a.825.825 0 1 0-1.65 0v6.6c0 .456.37.825.825.825ZM10.998 5.5a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z' fill='%23000' fill-opacity='.2'/%3E%3C/svg%3E")
+        background-size: contain
+        background-repeat: no-repeat
+        width: 22px
+        height: 22px
+        flex: 0 0 auto
+        margin-right: 8px
+    &-subscribe-form
+
+  &-subscribe__btn
+.sticky

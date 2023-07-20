@@ -43,3 +43,12 @@
 .--svg__cross-after::after {
     content:'';
 }
+.--svg__notice,.--svg__notice-before::before,.--svg__notice-after::after{
+    background-image: url("data:image/svg+xml;charset=utf8, %3Csvg width='22' height='22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='.08' d='M22 11c0 6.075-4.925 11-11 11S0 17.075 0 11 4.925 0 11 0s11 4.925 11 11Z' fill='%23000' fill-opacity='.9'/%3E%3Cpath d='M10.998 17.325c.456 0 .825-.37.825-.825V9.9a.825.825 0 1 0-1.65 0v6.6c0 .456.37.825.825.825ZM10.998 5.5a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z' fill='%23000' fill-opacity='.2'/%3E%3C/svg%3E");
+}
+.--svg__notice-before::before {
+    content:'';
+}
+.--svg__notice-after::after {
+    content:'';
+}

@@ -1042,18 +1042,21 @@ document.addEventListener("DOMContentLoaded", () => {
 			});
 		}
 	}, 3000);
-	// // прогрузка карты
-	// setTimeout( () => {
-	// 	const contactsMap = document.querySelector('.contacts-map');
+	
 
-	// 	const iframe = `<iframe
-	// 										loading="lazy"
-	// 										src="https://yandex.ru/map-widget/v1/?um=constructor%3A7542a8db8aef0daf91d5566660f9f1fe45a2f2eabce0ca047c580b1bd67aba5c&amp;source=constructor"
-	// 										width="100"
-	// 										height="630"
-	// 									></iframe>`;
-	// 	contactsMap.insertAdjacentHTML('afterbegin', iframe);
-	// }, 2000)
+	// прогрузка карты
+	setTimeout(() => {
+		const contactsMap = document.querySelector(".contacts-map");
+
+		const script = document.createElement("script");
+		script.setAttribute("type", "text/javascript");
+		script.setAttribute("charset", "utf-8");
+		script.setAttribute("async", "true");
+		script.src =
+			"https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab35e02d8d4502a6f544d4da2e78036b782d6739d988d22f033ed5c03836cc1e7&amp;width=100%25&amp;height=800&amp;lang=ru_RU&amp;scroll=false";
+
+		contactsMap.appendChild(script);
+	}, 500);
 
 	AOS.init({
 		duration: 1200,
