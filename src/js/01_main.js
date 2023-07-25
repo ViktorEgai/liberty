@@ -80,25 +80,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// открытие попап
 	const togglePopup = () => {
-		const popup = document.querySelector("9popup"),
-			popupTitle = popup.querySelector(".popup-title"),
-			popupBtn = popup.querySelector(".form-btn");
+		const popup = document.querySelector("#popup");
 
 		document.addEventListener("click", (e) => {
 			const target = e.target;
-			if (target.closest(".callback-btn")) {
-				popupTitle.textContent = "Связаться с нами";
-				popupBtn.textContent = "Оставить заявку";
+			if (target.closest(".callback-btn")) {	
+				
 				Fancybox.show([{ src: popup, type: "inline" }]);
 			}
-			if (target.closest(".consult-btn")) {
-				popupTitle.textContent = "Консультация";
-				popupBtn.textContent = "Получить консультацию";
-				Fancybox.show([{ src: popup, type: "inline" }]);
+			if (target.closest("#team-1")) {	
+				
+				Fancybox.show([{ src: '#popup-team-1', type: "inline" }]);
 			}
+			if (target.closest("#team-2")) {	
+				
+				Fancybox.show([{ src: '#popup-team-2', type: "inline" }]);
+			}
+			if (target.closest("#team-3")) {	
+				
+				Fancybox.show([{ src: '#popup-team-3', type: "inline" }]);
+			}
+			if (target.closest("#team-4")) {	
+				
+				Fancybox.show([{ src: '#popup-team-4', type: "inline" }]);
+			}
+			if (target.closest("#team-5")) {	
+				
+				Fancybox.show([{ src: '#popup-team-5', type: "inline" }]);
+			}
+			if (target.closest(".success-popup__close")) {	
+				
+				Fancybox.close();
+			}
+			
 		});
 	};
-	// togglePopup();
+	togglePopup();
+	// show success message
+	const showSuccess = () => {
+		
+		document.addEventListener('submit', (e) => {
+			e.preventDefault()
+			Fancybox.close();
+			Fancybox.show([{ src: '#success-popup', type: "inline" }]);
+		} )
+	};
+	showSuccess();
 
 	// hero image slider
 	const heroSlider = () => {
@@ -120,6 +147,52 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	};
 	heroSlider();
+	// blog slider
+	const singleBlogSlider = () => {
+		const slider = document.querySelector(".blog-swiper");
+		if (slider !== null) {
+			const swiper = new Swiper(slider, {
+				// Optional parameters
+				
+				slidesPerView: 3,
+				spaceBetween: "20px",
+				loop: true,
+				
+				
+				// If we need pagination
+				pagination: {
+					el: ".page-pagination",
+					clickable: true,
+    			/*Return bullets as numbers*/
+         	renderBullet: function (index, className) {
+           return '<span class="' + className + '">' + (index + 1) + "</span>"; },
+				},
+
+				// Navigation arrows
+				navigation: {
+					nextEl: ".page-nav__arrow--next",
+					prevEl: ".page-nav__arrow--prev",
+				},
+				breakpoints: {
+				
+					320: {
+						slidesPerView: 1,
+						
+					},
+					576: {
+						slidesPerView: 2,
+
+					},
+			
+					992: {
+						slidesPerView: 3,
+					},
+					
+				},
+			});
+		}
+	};
+	singleBlogSlider();
 
 	// systems slider
 	let systemSwiper = undefined;
@@ -1048,14 +1121,15 @@ document.addEventListener("DOMContentLoaded", () => {
 	setTimeout(() => {
 		const contactsMap = document.querySelector(".contacts-map");
 
-		const script = document.createElement("script");
+		if (contactsMap !== null)
+		{const script = document.createElement("script");
 		script.setAttribute("type", "text/javascript");
 		script.setAttribute("charset", "utf-8");
 		script.setAttribute("async", "true");
 		script.src =
 			"https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab35e02d8d4502a6f544d4da2e78036b782d6739d988d22f033ed5c03836cc1e7&amp;width=100%25&amp;height=800&amp;lang=ru_RU&amp;scroll=false";
 
-		contactsMap.appendChild(script);
+		contactsMap.appendChild(script);}
 	}, 500);
 
 	AOS.init({
